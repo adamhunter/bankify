@@ -1,10 +1,8 @@
-Bankify.MainController = Bankify.controller('MainController', ['$scope', '$http', function($scope, $http) {
+Bankify.MainController = Bankify.controller('MainController', ['$scope', 'Beer', function($scope, Beer) {
   var self = this;
-
   $scope.query = {};
 
-  $http.get(Bankify.Proxies.beers).success(function(response, statusCode) {
-    $scope.beers = response;
-  });
-
+  $scope.$watch('query', function(newQuery, oldQuery) {
+    $scope.beers = Beer.query({query: $scope.query});
+  }, true);
 }]);

@@ -1,3 +1,3 @@
 Bankify.Proxies = {
-  "beers" : "/data/beers"
+  "beers" : "/data/beers/:id"
 }

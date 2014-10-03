@@ -1,1 +1,1 @@
-Bankify = angular.module('Bankify', [])
+Bankify = angular.module('Bankify', ['ngResource'])
