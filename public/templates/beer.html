@@ -1,3 +1,5 @@
+<div class="info large-12">Fresh? {{beer.isFresh()}}</div>
 <button class="success" ng-click="makeEditable()" ng-show="!isEditable()">EDIT ME!</button>
 <button class="alert"   ng-click="lockEditable()" ng-show="isEditable()"> DONT EDIT</button>
 <div class="row" ng-include="beerTemplate()"></div>
+<div bank-beer-pic="{{pic()}}"></div>
