@@ -9,5 +9,13 @@ Bankify.BeersController = Bankify.controller('BeersController', ['$scope', 'Beer
   }, true);
 }]);
 
-Bankify.BeerController = Bankify.controller('BeerController', ['$scope', 'Beer', function($scope, Beer) {
+Bankify.BeerController = Bankify.controller('BeerController', ['$scope', 'Beer', '$routeParams', function($scope, Beer, $routeParams) {
+  var self      = this;
+  self.editable = false;
+  $scope.beer   = Beer.get($routeParams);
+  $scope.makeEditable = function() { self.editable = true;  }
+  $scope.lockEditable = function() { self.editable = false; $scope.beer.$persistEnFancification() }
+  $scope.isEditable   = function() { return self.editable;  }
+
+  $scope.beerTemplate = function() { return "/templates/_" + ($scope.isEditable() ? 'edit' : 'show') + "_beer.html"; }
 }]);

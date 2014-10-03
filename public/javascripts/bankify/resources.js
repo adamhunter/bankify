@@ -1,3 +1,7 @@
-Bankify.Beer = Bankify.factory('Beer', ['$resource', function($resource) {
-  return $resource(Bankify.Proxies.beers);
+Bankify.factory('Beer', ['$resource', function($resource) {
+  Bankify.Beer = $resource(Bankify.Proxies.beers, {}, 
+    {persistEnFancification: {method: 'PATCH', params: {soFancy: 'alreadyKnow'}}}
+  );
+
+  return Bankify.Beer;
 }]);
