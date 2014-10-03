@@ -1,12 +1,5 @@
-Bankify.factory('beerFresh', [function() {
-  beerFresh = function(beer) {
-    // beer.$promise.then(function() {
-    //   console.log(beer.id, beer.id < 11);
-    //   beer.fresh = beer.id < this.cap ? true : false;
-    // })
-  }
-
-  beerFresh.cap = 11
-
-  return beerFresh;
+Bankify.factory('beerChart', ['$http', '$rootScope', function($http, $rootScope) {
+  var $promise = $http.get(Bankify.Proxies.chart)
+  $promise.then(function(response) { $rootScope.$emit('beerChart.loaded', response.data); });
+  return $promise;
 }]);

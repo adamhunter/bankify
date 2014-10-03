@@ -2,4 +2,11 @@
 <button class="success" ng-click="makeEditable()" ng-show="!isEditable()">EDIT ME!</button>
 <button class="alert"   ng-click="lockEditable()" ng-show="isEditable()"> DONT EDIT</button>
 <div class="row" ng-include="beerTemplate()"></div>
-<div bank-beer-pic="{{pic()}}"></div>
+<div class="row">
+  <div class="large-6 columns">
+    <bank-cool-chart />
+  </div>
+  <div class="large-6 columns">
+    <div bank-beer-pic="{{pic()}}"></div>
+  </div>
+</div>

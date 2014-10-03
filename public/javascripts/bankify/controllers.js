@@ -9,7 +9,7 @@ Bankify.BeersController = Bankify.controller('BeersController', ['$scope', 'Beer
   }, true);
 }]);
 
-Bankify.BeerController = Bankify.controller('BeerController', ['$scope', '$routeParams', 'Beer', 'beerFresh', 'Tracker', function($scope, $routeParams, Beer, beerFresh, tracker) {
+Bankify.BeerController = Bankify.controller('BeerController', ['$scope', '$routeParams', 'Beer', 'Tracker', function($scope, $routeParams, Beer, tracker) {
   var self      = this;
   self.editable = false;
   $scope.beer   = tracker.track(Beer.get($routeParams));
@@ -17,7 +17,6 @@ Bankify.BeerController = Bankify.controller('BeerController', ['$scope', '$route
   $scope.lockEditable = function() { self.editable = false; $scope.beer.$persistEnFancification() }
   $scope.isEditable   = function() { return self.editable;  }
   $scope.pic          = function() { return 'http://www.samuelsmithsbrewery.co.uk/wpimages/wpae81d34c.jpg'; }
-  beerFresh($scope.beer);
 
   $scope.beerTemplate = function() { return "/templates/_" + ($scope.isEditable() ? 'edit' : 'show') + "_beer.html"; }
 }]);
