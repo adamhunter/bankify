@@ -9,6 +9,7 @@
   <body>
     <div id="container" class="row" ng-app="Bankify">
       <div id="main" class="large-12" ng-controller="MainController as main">
+        {{-1234 | negative}}
         <h1>Bankify</h1>
         <div ng-view></div>
       </div>
@@ -23,6 +24,7 @@
     <script src="/javascripts/bankify/controllers.js" type="application/javascript"></script>
     <script src="/javascripts/bankify/directives.js"  type="application/javascript"></script>
     <script src="/javascripts/bankify/factories.js"   type="application/javascript"></script>
+    <script src="/javascripts/bankify/filters.js"    type="application/javascript"></script>
     <script src="/javascripts/bankify/proxies.js"     type="application/javascript"></script>
     <script src="/javascripts/bankify/resources.js"   type="application/javascript"></script>
     <script src="/javascripts/bankify/routes.js"      type="application/javascript"></script>
