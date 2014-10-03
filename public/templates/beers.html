@@ -1,0 +1,40 @@
+<div class="row">
+  <form name="search">
+    <div class="large-6 columns">
+      <input type="text" name="query" placeholder="Query" ng-model="query.name" required />
+    </div>
+    <div class="large-6 columns">
+      <select ng-model="query.filter">
+        <option value="stout">Stout</option>
+        <option value="lager">Lager</option>
+      </select>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+  <div class="large-6 columns">
+    {{query.name}}
+  </div>
+  <div class="large-6 columns">
+    {{query.filter}}
+  </div>
+</div>
+
+<table class="large-12">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Flavor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="beer in beers">
+      <td>
+        <a ng-href="#/beers/{{beer.id}}">{{beer.name}}</a>
+        <span>({{$index}})</span>
+      </td>
+      <td>{{beer.flavor}}</td>
+    </tr>
+  </tbody>
+</table>
