@@ -1,0 +1,1 @@
+Bankify = angular.module('Bankify', [])
